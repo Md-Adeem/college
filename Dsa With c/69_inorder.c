@@ -26,6 +26,7 @@ void inOrder(struct node * root){
 }
 
 int main(){
+
     //Constructing the root node -using Function (Recommended)
     struct node * p = createNode(4);
     struct node * p1 = createNode(1);
@@ -39,7 +40,7 @@ int main(){
     //  / \
     // 5   2
 
-
+    
     //Linking the root node with left and right children
     p->left = p1;
     p->right = p2;
