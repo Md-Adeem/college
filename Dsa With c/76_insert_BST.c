@@ -20,8 +20,8 @@ void insert(struct node * root,int key){
     struct node * prev =  NULL;
     while (root!=NULL){
         prev =root;
-        if(key==root->data){
-            printf("Cannot insert %d, already in BST");
+        if(key == root->data){
+            printf("Cannot insert %d , already in BST");
             return;
         }
         else if(key<root->data){
@@ -54,7 +54,7 @@ int main(){
     p1->right = p4;
 
     
-    insert(p,1);
+    insert(p,6);
     printf("%d", p->right->right->data);
     return 0;
     
