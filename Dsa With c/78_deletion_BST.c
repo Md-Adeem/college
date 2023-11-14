@@ -41,6 +41,16 @@ void insert(struct node * root,int key){
     
 }
 
+struct node *deleteNode(struct node * root,int Value){
+       //Search for the node to be deleted
+       if(Value < root->data){
+           deleteNode(root->left,Value);
+       }
+       else if(Value>root->data){
+           deleteNode(root->right,Value);
+       }
+}
+
 int main(){
     struct node * p = createNode(5);
     struct node * p1 = createNode(3);
