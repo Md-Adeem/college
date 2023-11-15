@@ -16,41 +16,22 @@ struct node * createNode(int data){
     return n;
 }
 
-void insert(struct node * root,int key){
-    struct node * prev =  NULL;
-    while (root!=NULL){
-        prev =root;
-        if(key == root->data){
-            printf("Cannot insert %d , already in BST");
-            return;
-        }
-        else if(key<root->data){
-            root =root->left;
-        }
-        else{
-            root =root->right;
-        }
-    }
-    struct node *new = createNode(key);
-    if(key<prev->data){
-        prev->left = new;
-    }
-    else{
-        prev->right = new;
-    }
-    
-}
-
 struct node *deleteNode(struct node * root,int Value){
-       //Search for the node to be deleted
+      //Search for the node to be deleted
        if(Value < root->data){
            deleteNode(root->left,Value);
        }
        else if(Value>root->data){
            deleteNode(root->right,Value);
        }
-}
 
+      //Deletion strategy when the node is found
+      else{
+         // ipre = inOrderPredecessor(root);
+         // root->data = iPre->data;
+          deleteNode(root->right,Value);
+       }
+ }
 int main(){
     struct node * p = createNode(5);
     struct node * p1 = createNode(3);
