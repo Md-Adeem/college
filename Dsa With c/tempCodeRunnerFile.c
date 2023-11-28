@@ -1,1 +1,6 @@
-head= insertAtFirst(head,45);
+#include<stdio.h>
+
+void printArray(int* A, int n){
+    for(int i =0; i<n; i++){
+        printf("%d ",A[i]);
+    }
